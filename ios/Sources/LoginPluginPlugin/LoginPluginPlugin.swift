@@ -10,14 +10,14 @@ public class LoginPluginPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "LoginPluginPlugin"
     public let jsName = "LoginPlugin"
     public let pluginMethods: [CAPPluginMethod] = [
-        CAPPluginMethod(name: "echo", returnType: CAPPluginReturnPromise)
+        CAPPluginMethod(name: "login", returnType: CAPPluginReturnPromise)
     ]
     private let implementation = LoginPlugin()
 
-    @objc func echo(_ call: CAPPluginCall) {
+    @objc func login(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
         call.resolve([
-            "value": implementation.echo(value)
+            "value": implementation.login(value)
         ])
     }
 }
