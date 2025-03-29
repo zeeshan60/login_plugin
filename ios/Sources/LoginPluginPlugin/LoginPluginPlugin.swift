@@ -20,4 +20,8 @@ public class LoginPluginPlugin: CAPPlugin, CAPBridgedPlugin {
             "value": implementation.echo(value)
         ])
     }
+    
+    override public func load() {
+        print("plugin loaded")
+    }
 }
