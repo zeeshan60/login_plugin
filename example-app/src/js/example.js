@@ -1,6 +1,11 @@
-import { LoginPlugin } from 'zeenom';
+import {LoginPlugin} from 'zeenom';
 
 window.testEcho = () => {
     const inputValue = document.getElementById("echoInput").value;
-    LoginPlugin.echo({ value: inputValue })
+    LoginPlugin.echo({value: inputValue}).then(result => {
+            console.log(result.value);
+            document.getElementById("echoInput").value = result.value;
+            document.getElementById("description").textContent = result.value;
+        }
+    );
 }
