@@ -13,17 +13,17 @@ npx cap sync
 
 <docgen-index>
 
-* [`login(...)`](#login)
+* [`echo(...)`](#echo)
 
 </docgen-index>
 
 <docgen-api>
 <!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
-### login(...)
+### echo(...)
 
 ```typescript
-login(options: { value: string; }) => Promise<{ value: string; }>
+echo(options: { value: string; }) => Promise<{ value: string; }>
 ```
 
 | Param         | Type                            |
