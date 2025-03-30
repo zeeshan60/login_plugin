@@ -114,7 +114,9 @@ public class LoginPluginPlugin: CAPPlugin, CAPBridgedPlugin {
                 options.gcmSenderID = configDict["GCM_SENDER_ID"] as! String
 
                 DispatchQueue.main.async {
-                    FirebaseApp.configure(options: options)
+                    if FirebaseApp.app() == nil {
+                        FirebaseApp.configure(options: options)
+                    }
                     print("Firebase initialized successfully")
                     completion(true, nil)
                 }
